@@ -7,13 +7,21 @@ import Filter from "../Filter/Filter"
 
 export default class Methode extends React.Component {
   filteredText = [
-    { id: 1, text: "Dijual barang ini" },
+    { id: 3, text: "Dijual barang ini" },
     { id: 2, text: "Dibutuhkan tenaga kerja"},
-    { id: 3, text: "Tidak perlu test"}
+    { id: 1, text: "Tidak perlu test"}
   ]
 
   addItem = (newText) => {
-    const newId = this.filteredText[this.filteredText.length - 1].id + 1;
+    var newId; 
+    if (this.filteredText[0]){
+      // newId = this.filteredText[this.filteredText.length - 1].id + 1;
+      const newArr = this.filteredText.map((el) => el.id)
+      newId = Math.max.apply( Math, newArr) + 1;
+    } else {
+      newId = 1;
+    }
+    // console.log(newId);
     this.filteredText.unshift({id: newId, text: newText});
     this.forceUpdate();
   }

@@ -17,6 +17,11 @@ export default class Filter extends React.Component {
         <List>
           <FlipMove duration={500} easing="ease-out">
         {
+          !this.props.text[0] ? 
+            <ListItem
+              primaryText="Kata identifikasi spam kosong"
+              key={0}
+            /> :
           this.props.text.map((t, i) => {
             return (
               <ListItem
