@@ -7,8 +7,8 @@ import FontIcon from 'material-ui/FontIcon';
 import FlipMove from 'react-flip-move';
 
 export default class Filter extends React.Component {
-  componentDidMount(){
-    console.log(this.props.text)
+  handleDelete(id){
+    this.props.onDelete(id)
   }
 
   render(){
@@ -24,6 +24,9 @@ export default class Filter extends React.Component {
                 rightIcon={<FontIcon className="material-icons">delete</FontIcon>}
                 primaryText={t.text}
                 key={t.id}
+                onClick={(e) => {
+                  this.handleDelete(t.id);
+                }}
               />
             )
           })

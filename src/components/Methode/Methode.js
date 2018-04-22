@@ -17,6 +17,11 @@ export default class Methode extends React.Component {
     this.filteredText.unshift({id: newId, text: newText});
     this.forceUpdate();
   }
+
+  deleteItem = (id) => {
+    this.filteredText = this.filteredText.filter((el) => el.id !== id);
+    this.forceUpdate();
+  }
   
   render(){
     return (
@@ -27,21 +32,21 @@ export default class Methode extends React.Component {
             label="KMP"
           >
             <Pattern onAdd={this.addItem} />
-            <Filter text={this.filteredText} />
+            <Filter onDelete={this.deleteItem} text={this.filteredText} />
           </Tab>
           <Tab
             icon={<FontIcon className="material-icons">local_drink</FontIcon>}
             label="BM"
           >
             <Pattern onAdd={this.addItem} />
-            <Filter text={this.filteredText} />
+            <Filter onDelete={this.deleteItem} text={this.filteredText} />
           </Tab>
           <Tab
           icon={<FontIcon className="material-icons">code</FontIcon>}
           label="REGEX"
           >
             <Pattern onAdd={this.addItem} />
-            <Filter text={this.filteredText} />
+            <Filter onDelete={this.deleteItem} text={this.filteredText} />
           </Tab>
         </Tabs>
       </section>
