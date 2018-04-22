@@ -4,26 +4,32 @@ import Avatar from 'material-ui/Avatar';
 import ActionAssignment from 'material-ui/svg-icons/action/assignment';
 import {blue500} from 'material-ui/styles/colors';
 import FontIcon from 'material-ui/FontIcon';
+import FlipMove from 'react-flip-move';
 
 export default class Filter extends React.Component {
+  componentDidMount(){
+    console.log(this.props.text)
+  }
+
   render(){
     return (
       <section>
-      <List>
-      {
-        this.props.text.map((t, i) => {
-          return (
-            <React.Fragment key={i}>
+        <List>
+          <FlipMove duration={500} easing="ease-out">
+        {
+          this.props.text.map((t, i) => {
+            return (
               <ListItem
                 leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={blue500} />}
                 rightIcon={<FontIcon className="material-icons">delete</FontIcon>}
-                primaryText={t}
+                primaryText={t.text}
+                key={t.id}
               />
-            </React.Fragment>
-          )
-        })
-      }
-      </List>
+            )
+          })
+        }
+          </FlipMove>
+        </List>
       </section>
     )
   }

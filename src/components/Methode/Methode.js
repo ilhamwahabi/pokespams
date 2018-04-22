@@ -7,19 +7,14 @@ import Filter from "../Filter/Filter"
 
 export default class Methode extends React.Component {
   filteredText = [
-    "Dijual barang ini",
-    "Dibutuhkan tenaga kerja",
-    "Tidak perlu test"
-  ]
-
-  filteredPattern = [
-    "Dijual barang ini",
-    "Dibutuhkan tenaga kerja",
-    "Tidak perlu test"
+    { id: 1, text: "Dijual barang ini" },
+    { id: 2, text: "Dibutuhkan tenaga kerja"},
+    { id: 3, text: "Tidak perlu test"}
   ]
 
   addItem = (newText) => {
-    this.filteredText.push(newText);
+    const newId = this.filteredText[this.filteredText.length - 1].id + 1;
+    this.filteredText.unshift({id: newId, text: newText});
     this.forceUpdate();
   }
   
@@ -29,24 +24,24 @@ export default class Methode extends React.Component {
         <Tabs>
           <Tab
             icon={<FontIcon className="material-icons">view_day</FontIcon>}
-            label="Knuth-Morris-Pratt"
+            label="KMP"
           >
             <Pattern onAdd={this.addItem} />
             <Filter text={this.filteredText} />
           </Tab>
           <Tab
             icon={<FontIcon className="material-icons">local_drink</FontIcon>}
-            label="Boyer-Moore"
+            label="BM"
           >
             <Pattern onAdd={this.addItem} />
             <Filter text={this.filteredText} />
           </Tab>
           <Tab
           icon={<FontIcon className="material-icons">code</FontIcon>}
-          label="Regular Expression"
+          label="REGEX"
           >
             <Pattern onAdd={this.addItem} />
-            <Filter text={this.filteredPattern} />
+            <Filter text={this.filteredText} />
           </Tab>
         </Tabs>
       </section>

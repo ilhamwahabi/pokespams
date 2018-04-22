@@ -7,8 +7,9 @@ export default class Pattern extends React.Component {
   inputValue = "";
 
   handleClick = () =>{
-    // this.props.onAdd(this.inputValue)
-    this.props.onAdd(this.inputValue);
+    if (this.inputValue.trim() !== ""){
+      this.props.onAdd(this.inputValue);
+    }
   }
 
   render(){
