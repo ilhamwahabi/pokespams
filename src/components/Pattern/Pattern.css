@@ -1,0 +1,18 @@
+#pattern {
+  margin-top: 1rem;
+}
+
+.pattern__form-control{
+  display: flex;
+  flex-direction: row;
+}
+
+.pattern__form-text-input {
+  /* align-self: flex-start; */
+  flex-grow: 7;
+}
+
+.pattern__form-button {
+  justify-self: flex-end;
+  flex-grow: 1;
+}

@@ -2,7 +2,6 @@ import React from 'react'
 
 import Methode from '../Methode/Methode'
 import Result from '../Result/Result'
-import Pattern from '../Pattern/Pattern'
 
 import './Content.css'
 
@@ -12,7 +11,6 @@ export default class Content extends React.Component {
       <main id="content">
         <section id="variable">
           <Methode />
-          <Pattern />
         </section>
         <section id="d1" />
         <section id="value">
