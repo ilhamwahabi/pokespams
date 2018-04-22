@@ -18,7 +18,7 @@ export default class Methode extends React.Component {
           />
           <Tab
           icon={<FontIcon className="material-icons">code</FontIcon>}
-          label="Regex"
+          label="Regular Expression"
           />
         </Tabs>
       </section>

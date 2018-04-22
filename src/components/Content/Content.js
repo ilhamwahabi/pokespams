@@ -14,6 +14,7 @@ export default class Content extends React.Component {
           <Methode />
           <Pattern />
         </section>
+        <section id="d1" />
         <section id="value">
           <Result />
         </section>

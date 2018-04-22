@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
   font-size: 10px;
   display: flex;
   flex-direction: column;
@@ -16,4 +16,8 @@
 
 #footer {
   justify-self: flex-end;
+}
+
+#d1 {
+  flex-grow: 1;
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 
+import "./Header.css"
+
 const AppBarExampleIcon = () => (
   <header id="header">
     <AppBar
