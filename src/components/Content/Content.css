@@ -1,0 +1,15 @@
+#content {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+}
+
+#variable {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+#value {
+  flex-grow: 3;
+}

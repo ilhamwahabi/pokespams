@@ -3,11 +3,12 @@ import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 
 const AppBarExampleIcon = () => (
-  <AppBar
-    title="PokeSpams"
-    iconClassNameRight="muidocs-icon-navigation-expand-more"
-    iconElementRight={<FlatButton label="Poke" />}
-  />
+  <header id="header">
+    <AppBar
+      title="PokeSpams"
+      iconElementRight={<FlatButton label="Poke" />}
+    />
+  </header>
 );
 
 export default AppBarExampleIcon;
