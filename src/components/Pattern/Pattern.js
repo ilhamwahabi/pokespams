@@ -4,26 +4,41 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import "./Pattern.css"
 export default class Pattern extends React.Component {
+  inputValue = "";
+
+  handleClick = () =>{
+    // this.props.onAdd(this.inputValue)
+    this.props.onAdd(this.inputValue);
+  }
+
   render(){
     return (
       <section id="pattern">
-        <form className="pattern__form">
-          <div className="pattern__form-control">
-            <div className="pattern__form-text-input">
-              <TextField
-                hintText="Add new spam word"
-                fullWidth={true}
-              />
-            </div>
-            <div className="pattern__form-button">
-              <RaisedButton
-                label="ADD"
-                primary={true}
-                fullWidth={true}
-              />
-            </div>
+        <div className="pattern__form-control">
+          <div className="pattern__form-text-input">
+            <TextField
+              hintText="Add new spam word"
+              fullWidth={true}
+              onChange={(e, v) => {
+                this.inputValue = v;
+              }}
+              onKeyPress={(e) => {
+                if (e.key === 'Enter'){
+                  this.handleClick();
+                  e.target.value = "";
+                }
+              }}
+            />
           </div>
-        </form>
+          <div className="pattern__form-button">
+            <RaisedButton
+              label="ADD"
+              primary={true}
+              fullWidth={true}
+              onClick={this.handleClick}
+            />
+          </div>
+        </div>
       </section>
     )
   }
