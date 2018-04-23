@@ -5,6 +5,7 @@ import FontIcon from 'material-ui/FontIcon';
 import Pattern from "../Pattern/Pattern"
 import Filter from "../Filter/Filter"
 
+import "./Methode.css";
 export default class Methode extends React.Component {
   filteredText = [
     { id: 3, text: "Dijual barang ini" },
@@ -48,13 +49,13 @@ export default class Methode extends React.Component {
   }
 
   changeMethod = (value) => {
-    console.log(value)
+    // console.log(value)
     localStorage.setItem("method", value);
   }
 
   render(){
     return (
-      <section>
+      <section id="methode">
         <Tabs
           onChange={this.changeMethod}
         >

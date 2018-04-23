@@ -6,6 +6,8 @@ import {blue500} from 'material-ui/styles/colors';
 import FontIcon from 'material-ui/FontIcon';
 import FlipMove from 'react-flip-move';
 
+import './Filter.css'
+
 export default class Filter extends React.Component {
   handleDelete(id){
     this.props.onDelete(id)
@@ -13,7 +15,7 @@ export default class Filter extends React.Component {
 
   render(){
     return (
-      <section>
+      <section id="filter">
         <List>
           <FlipMove duration={500} easing="ease-out">
         {
