@@ -4,11 +4,15 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import "./Pattern.css"
 export default class Pattern extends React.Component {
-  inputValue = "";
+  constructor(props){
+    super(props);
+    this.state = { inputValue: "" };
+  }
 
   handleClick = () =>{
-    if (this.inputValue.trim() !== ""){
-      this.props.onAdd(this.inputValue);
+    if (this.state.inputValue.trim() !== ""){
+      this.props.onAdd(this.state.inputValue);
+      this.setState({ inputValue: '' });
     }
   }
 
@@ -21,7 +25,7 @@ export default class Pattern extends React.Component {
               hintText="Add new spam word"
               fullWidth={true}
               onChange={(e, v) => {
-                this.inputValue = v;
+                this.setState({ inputValue: v });
               }}
               onKeyPress={(e) => {
                 if (e.key === 'Enter'){
@@ -29,6 +33,7 @@ export default class Pattern extends React.Component {
                   e.target.value = "";
                 }
               }}
+              value={this.state.inputValue}
             />
           </div>
           <div className="pattern__form-button">
