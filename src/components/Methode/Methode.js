@@ -12,6 +12,14 @@ export default class Methode extends React.Component {
     { id: 1, text: "Tidak perlu test"}
   ]
 
+  constructor(props){
+    super(props);
+
+    const textArr = this.filteredText.map((el) => el.text)
+    localStorage.setItem("method", 0);    
+    localStorage.setItem("text", JSON.stringify(textArr.join(',')));    
+  }
+
   addItem = (newText) => {
     var newId; 
     if (this.filteredText[0]){
@@ -23,19 +31,35 @@ export default class Methode extends React.Component {
     }
     // console.log(newId);
     this.filteredText.unshift({id: newId, text: newText});
+
+    const textArr = this.filteredText.map((el) => el.text)
+    localStorage.setItem("text", JSON.stringify(textArr.join(',')));    
+
     this.forceUpdate();
   }
 
   deleteItem = (id) => {
     this.filteredText = this.filteredText.filter((el) => el.id !== id);
+
+    const textArr = this.filteredText.map((el) => el.text)
+    localStorage.setItem("text", JSON.stringify(textArr.join(',')));    
+
     this.forceUpdate();
   }
-  
+
+  changeMethod = (value) => {
+    console.log(value)
+    localStorage.setItem("method", value);
+  }
+
   render(){
     return (
       <section>
-        <Tabs>
+        <Tabs
+          onChange={this.changeMethod}
+        >
           <Tab
+            value={0}
             icon={<FontIcon className="material-icons">view_day</FontIcon>}
             label="KMP"
           >
@@ -43,6 +67,7 @@ export default class Methode extends React.Component {
             <Filter onDelete={this.deleteItem} text={this.filteredText} />
           </Tab>
           <Tab
+            value={1}
             icon={<FontIcon className="material-icons">local_drink</FontIcon>}
             label="BM"
           >
@@ -50,8 +75,9 @@ export default class Methode extends React.Component {
             <Filter onDelete={this.deleteItem} text={this.filteredText} />
           </Tab>
           <Tab
-          icon={<FontIcon className="material-icons">code</FontIcon>}
-          label="REGEX"
+            value={2}
+            icon={<FontIcon className="material-icons">code</FontIcon>}
+            label="REGEX"
           >
             <Pattern onAdd={this.addItem} />
             <Filter onDelete={this.deleteItem} text={this.filteredText} />
