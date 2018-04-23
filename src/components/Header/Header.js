@@ -9,7 +9,7 @@ import "./Header.css"
 
 export default class AppBarExampleIcon extends React.Component {
   onPoke = () => {
-    const patterns = JSON.parse(localStorage.getItem("text"));
+    const patterns = JSON.parse(localStorage.getItem("text")) ? JSON.parse(localStorage.getItem("text")) : "none";
     
     var method;
     if (localStorage.getItem('method') === "0") {
@@ -19,8 +19,6 @@ export default class AppBarExampleIcon extends React.Component {
     } else if (localStorage.getItem('method') === "2") {
       method = "regex"
     }
-    console.log("method");
-    console.log(method);
 
     axios.get(`http://localhost:51503/api/search?method=${method}&patterns=${patterns}`, {
 
