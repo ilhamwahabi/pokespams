@@ -8,14 +8,25 @@ import axios from 'axios';
 import "./Header.css"
 
 export default class AppBarExampleIcon extends React.Component {
-  onPoke(){
-    const text = JSON.parse(localStorage.getItem("text"));
-    console.log(text);
-    axios.get('http://localhost:51503/api/search?method=bym&patterns=jual,beli,spam,tes', {
+  onPoke = () => {
+    const patterns = JSON.parse(localStorage.getItem("text"));
+    
+    var method;
+    if (localStorage.getItem('method') === "0") {
+      method = "kmp"
+    } else if (localStorage.getItem('method') === "1") {
+      method = "bym"
+    } else if (localStorage.getItem('method') === "2") {
+      method = "regex"
+    }
+    console.log("method");
+    console.log(method);
+
+    axios.get(`http://localhost:51503/api/search?method=${method}&patterns=${patterns}`, {
 
     })
     .then((res) => {
-      console.log(res);
+      this.props.getResponse(res.data)
     })
   }
 

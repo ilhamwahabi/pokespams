@@ -14,7 +14,7 @@ export default class Content extends React.Component {
         </section>
         <section id="d1" />
         <section id="value">
-          <Result />
+          <Result responseData={this.props.responseData} />
         </section>
       </main>
     )
