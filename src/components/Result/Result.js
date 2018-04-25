@@ -25,7 +25,7 @@ export default class Result extends React.Component {
                     leftAvatar={<Avatar icon={<FileFolder />} />}
                     rightIcon={<FontIcon className="material-icons">link</FontIcon>}
                     primaryText={r[0]}
-                    secondaryText="Jan 9, 2014"
+                    secondaryText={r[1]}
                     key={i}
                   />
                 ))
