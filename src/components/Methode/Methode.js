@@ -24,13 +24,11 @@ export default class Methode extends React.Component {
   addItem = (newText) => {
     var newId; 
     if (this.filteredText[0]){
-      // newId = this.filteredText[this.filteredText.length - 1].id + 1;
       const newArr = this.filteredText.map((el) => el.id)
       newId = Math.max.apply( Math, newArr) + 1;
     } else {
       newId = 1;
     }
-    // console.log(newId);
     this.filteredText.unshift({id: newId, text: newText});
 
     const textArr = this.filteredText.map((el) => el.text)
@@ -49,7 +47,6 @@ export default class Methode extends React.Component {
   }
 
   changeMethod = (value) => {
-    // console.log(value)
     localStorage.setItem("method", value);
   }
 

@@ -6,35 +6,38 @@ import FontIcon from 'material-ui/FontIcon';
 import FileFolder from 'material-ui/svg-icons/file/folder';
 import FlipMove from 'react-flip-move';
 
+import './Result.css'
 
 export default class Result extends React.Component {
   render(){
     return (
-      <section>
+      <section id="result">
         <List>
-          <Subheader inset={true}>Search Results</Subheader>
-            <FlipMove duration={500} easing="ease-out">          
-            {
-              !this.props.responseData[0] ?
-                <ListItem 
-                  leftAvatar={<Avatar icon={<FontIcon className="material-icons">not_interested</FontIcon>} />}
-                  primaryText="Spam Not Detected"
-                /> :
-                this.props.responseData.map((r, i) => (
+          <Subheader inset={true}>
+            Search Results
+          </Subheader>
+          <FlipMove id="result__flipmove" duration={500} easing="ease-out">          
+          {
+            !this.props.responseData[0] ?
+            <ListItem 
+            leftAvatar={<Avatar icon={<FontIcon className="material-icons">not_interested</FontIcon>} />}
+            primaryText="Spam Not Detected"
+            /> :
+            this.props.responseData.map((r, i) => (
                   <ListItem
-                    leftAvatar={<Avatar icon={<FileFolder />} />}
+                  leftAvatar={<Avatar icon={<FileFolder />} />}
                     rightIcon={<FontIcon className="material-icons">link</FontIcon>}
                     primaryText={r[0]}
                     secondaryText={r[1]}
                     key={i}
-                  />
-                ))
+                    />
+                  ))
+                }
+                </FlipMove>
+                </List>
+                </section>
+              )
             }
-          </FlipMove>
-        </List>
-      </section>
-    )
-  }
 }
 
 // <ListItem
@@ -42,4 +45,15 @@ export default class Result extends React.Component {
 //   rightIcon={<FontIcon className="material-icons">link</FontIcon>}
 //   primaryText="Photos"
 //   secondaryText="Jan 9, 2014"
+// />
+
+// <TextField
+//   hintText="Tweet Query"
+//   fullWidth={true}
+// />
+// <TextField
+//   hintText="Tweet Count"
+// />
+// <TextField
+//   hintText="Tweet Lang"
 // />

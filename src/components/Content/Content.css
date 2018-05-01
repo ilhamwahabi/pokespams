@@ -7,9 +7,36 @@
 #variable {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  /* width: 40%; */
+  flex: 5;
+}
+
+#d1 {
+  flex: 1;
 }
 
 #value {
-  flex-grow: 4;
+  flex: 6;
+}
+
+@media (max-width: 768px) {
+  #content {
+    flex-direction: column;
+  }
+
+  #variable {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    flex-grow: 0;
+  }
+  
+  #d1 {
+    order: 2;
+    flex-grow: 0;
+  }
+
+  #value {
+    flex-grow: 0;
+  }
 }
