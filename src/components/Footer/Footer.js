@@ -11,5 +11,3 @@ export default class Footer extends React.Component {
     )
   }
 }
-
-// <p className="footer__dev">Nuha Adinata & Ilham Wahabi</p>

@@ -12,10 +12,7 @@ class App extends Component {
   }
 
   handleResponse = (data) => {
-    // console.log(data);    
     this.setState({ response: data })
-    // console.log("Yay, i got response")
-    // console.log(this.state.response);    
   }
 
   render() {

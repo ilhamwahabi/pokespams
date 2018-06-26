@@ -10,9 +10,6 @@ import "./Header.css"
 export default class AppBarExampleIcon extends React.Component {
   onPoke = () => {
     const patterns = JSON.parse(localStorage.getItem("text")) ? JSON.parse(localStorage.getItem("text")) : "none";
-    // const query = "test";
-    // const lang = "id";
-    // const count = "100";
 
     var method;
     if (localStorage.getItem('method') === "0") {

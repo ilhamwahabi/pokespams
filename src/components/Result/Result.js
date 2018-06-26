@@ -24,36 +24,19 @@ export default class Result extends React.Component {
             primaryText="Spam Not Detected"
             /> :
             this.props.responseData.map((r, i) => (
-                  <ListItem
+                <ListItem
                   leftAvatar={<Avatar icon={<FileFolder />} />}
-                    rightIcon={<FontIcon className="material-icons">link</FontIcon>}
-                    primaryText={r[0]}
-                    secondaryText={r[1]}
-                    key={i}
-                    />
-                  ))
-                }
-                </FlipMove>
-                </List>
-                </section>
+                  rightIcon={<FontIcon className="material-icons">link</FontIcon>}
+                  primaryText={r[0]}
+                  secondaryText={r[1]}
+                  key={i}
+                />
               )
-            }
+            )
+          }
+          </FlipMove>
+        </List>
+      </section>
+    )
+  }
 }
-
-// <ListItem
-//   leftAvatar={<Avatar icon={<FileFolder />} />}
-//   rightIcon={<FontIcon className="material-icons">link</FontIcon>}
-//   primaryText="Photos"
-//   secondaryText="Jan 9, 2014"
-// />
-
-// <TextField
-//   hintText="Tweet Query"
-//   fullWidth={true}
-// />
-// <TextField
-//   hintText="Tweet Count"
-// />
-// <TextField
-//   hintText="Tweet Lang"
-// />

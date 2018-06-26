@@ -7,43 +7,50 @@ import Filter from "../Filter/Filter"
 
 import "./Methode.css";
 export default class Methode extends React.Component {
-  filteredText = [
-    { id: 3, text: "Dijual barang ini" },
-    { id: 2, text: "Dibutuhkan tenaga kerja"},
-    { id: 1, text: "Tidak perlu test"}
-  ]
-
   constructor(props){
     super(props);
 
-    const textArr = this.filteredText.map((el) => el.text)
+    this.state = {
+      filteredText: [
+        { id: 3, text: "Dijual barang ini" },
+        { id: 2, text: "Dibutuhkan tenaga kerja"},
+        { id: 1, text: "Tidak perlu test"}
+      ]
+    }
+
+    const textArr = this.state.filteredText.map((el) => el.text)
     localStorage.setItem("method", 0);    
     localStorage.setItem("text", JSON.stringify(textArr.join(',')));    
   }
 
   addItem = (newText) => {
     var newId; 
-    if (this.filteredText[0]){
-      const newArr = this.filteredText.map((el) => el.id)
-      newId = Math.max.apply( Math, newArr) + 1;
+    if (this.state.filteredText[0]){
+      newId = this.state.filteredText[0].id + 1
     } else {
       newId = 1;
     }
-    this.filteredText.unshift({id: newId, text: newText});
+    var newWord = {id: newId, text: newText}
 
-    const textArr = this.filteredText.map((el) => el.text)
+    this.setState(prevState => {
+      return {
+        filteredText: [].concat(newWord, prevState.filteredText)
+      }
+    })
+
+    const textArr = this.state.filteredText.map((el) => el.text)
     localStorage.setItem("text", JSON.stringify(textArr.join(',')));    
-
-    this.forceUpdate();
   }
 
   deleteItem = (id) => {
-    this.filteredText = this.filteredText.filter((el) => el.id !== id);
+    this.setState(prevState => {
+      return {
+        filteredText: prevState.filteredText.filter((el) => el.id !== id)
+      }
+    })
 
-    const textArr = this.filteredText.map((el) => el.text)
+    const textArr = this.state.filteredText.map((el) => el.text)
     localStorage.setItem("text", JSON.stringify(textArr.join(',')));    
-
-    this.forceUpdate();
   }
 
   changeMethod = (value) => {
@@ -62,7 +69,7 @@ export default class Methode extends React.Component {
             label="KMP"
           >
             <Pattern onAdd={this.addItem} />
-            <Filter onDelete={this.deleteItem} text={this.filteredText} />
+            <Filter onDelete={this.deleteItem} text={this.state.filteredText} />
           </Tab>
           <Tab
             value={1}
@@ -70,7 +77,7 @@ export default class Methode extends React.Component {
             label="BM"
           >
             <Pattern onAdd={this.addItem} />
-            <Filter onDelete={this.deleteItem} text={this.filteredText} />
+            <Filter onDelete={this.deleteItem} text={this.state.filteredText} />
           </Tab>
           <Tab
             value={2}
@@ -78,7 +85,7 @@ export default class Methode extends React.Component {
             label="REGEX"
           >
             <Pattern onAdd={this.addItem} />
-            <Filter onDelete={this.deleteItem} text={this.filteredText} />
+            <Filter onDelete={this.deleteItem} text={this.state.filteredText} />
           </Tab>
         </Tabs>
       </section>

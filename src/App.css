@@ -6,10 +6,6 @@
   min-height: 100vh;
 }
 
-#header {
-
-}
-
 #content {
   flex-grow: 1;
 }
