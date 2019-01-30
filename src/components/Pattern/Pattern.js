@@ -1,38 +1,35 @@
-import React from 'react'
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import React from "react";
+import TextField from "material-ui/TextField";
+import RaisedButton from "material-ui/RaisedButton";
 
-import "./Pattern.css"
+import "./Pattern.css";
 export default class Pattern extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = { inputValue: "" };
   }
 
-  handleClick = () =>{
-    if (this.state.inputValue.trim() !== ""){
-      this.props.onAdd(this.state.inputValue);
-      this.setState({ inputValue: '' });
-    }
-  }
+  handleChange = (e, v) => {
+    this.setState({ inputValue: v });
+  };
 
-  render(){
+  handleSubmit = e => {
+    e.preventDefault();
+    if (this.state.inputValue.trim() !== "") {
+      this.props.onAdd(this.state.inputValue);
+      this.setState({ inputValue: "" });
+    }
+  };
+
+  render() {
     return (
       <section id="pattern">
-        <div className="pattern__form-control">
+        <form onSubmit={this.handleSubmit} className="pattern__form-control">
           <div className="pattern__form-text-input">
             <TextField
               hintText="Add new spam word"
               fullWidth={true}
-              onChange={(e, v) => {
-                this.setState({ inputValue: v });
-              }}
-              onKeyPress={(e) => {
-                if (e.key === 'Enter'){
-                  this.handleClick();
-                  e.target.value = "";
-                }
-              }}
+              onChange={this.handleChange}
               value={this.state.inputValue}
             />
           </div>
@@ -41,11 +38,11 @@ export default class Pattern extends React.Component {
               label="ADD"
               primary={true}
               fullWidth={true}
-              onClick={this.handleClick}
+              onClick={this.handleSubmit}
             />
           </div>
-        </div>
+        </form>
       </section>
-    )
+    );
   }
 }
