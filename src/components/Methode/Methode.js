@@ -7,17 +7,15 @@ import Filter from "../Filter/Filter"
 
 import "./Methode.css";
 export default class Methode extends React.Component {
-  constructor(props){
-    super(props);
+  state = {
+    filteredText: [
+      { id: 3, text: "Dijual barang ini" },
+      { id: 2, text: "Dibutuhkan tenaga kerja"},
+      { id: 1, text: "Tidak perlu test"}
+    ]
+  }
 
-    this.state = {
-      filteredText: [
-        { id: 3, text: "Dijual barang ini" },
-        { id: 2, text: "Dibutuhkan tenaga kerja"},
-        { id: 1, text: "Tidak perlu test"}
-      ]
-    }
-
+  componentDidMount() {
     const textArr = this.state.filteredText.map((el) => el.text)
     localStorage.setItem("method", 0);    
     localStorage.setItem("text", JSON.stringify(textArr.join(',')));    

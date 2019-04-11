@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import './App.css';
 
+import './App.css';
 import Header from './components/Header/Header'
 import Content from './components/Content/Content'
 import Footer from './components/Footer/Footer'
+
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = { response: [] }
+  state = {
+    response: []
   }
 
   handleResponse = (data) => {

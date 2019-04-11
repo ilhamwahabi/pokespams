@@ -7,9 +7,11 @@ import axios from 'axios';
 
 import "./Header.css"
 
-export default class AppBarExampleIcon extends React.Component {
-  onPoke = () => {
-    const patterns = JSON.parse(localStorage.getItem("text")) ? JSON.parse(localStorage.getItem("text")) : "none";
+const Header = ({ getResponse }) => {
+   const onPoke = () => {
+    const patterns = 
+      JSON.parse(localStorage.getItem("text")) ? 
+      JSON.parse(localStorage.getItem("text")) : "none";
 
     var method;
     if (localStorage.getItem('method') === "0") {
@@ -21,24 +23,24 @@ export default class AppBarExampleIcon extends React.Component {
     }
 
     axios.get(`http://localhost:51503/api/search?method=${method}&patterns=${patterns}`, {})
-    .then((res) => {
-      console.log(res.data);
-      this.props.getResponse(res.data)
-    })
-    .catch(e => {
-      this.props.getResponse([["Sorry, server not deployed yet :(", "-", "-"]])
-    })
+      .then((res) => {
+        console.log(res.data);
+        getResponse(res.data)
+      })
+      .catch(e => {
+        getResponse([["Sorry, server not deployed yet :(", "-", "-"]])
+      })
   }
 
-  render(){
-    return (
-      <header id="header">
-        <AppBar
-          title="PokeSpams"
-          iconElementLeft={<IconButton><Search /></IconButton>}
-          iconElementRight={<FlatButton onClick={this.onPoke} label="Poke" />}
-        />
-      </header>
-    )
-  }
+  return (
+    <header id="header">
+      <AppBar
+        title="PokeSpams"
+        iconElementLeft={<IconButton><Search /></IconButton>}
+        iconElementRight={<FlatButton onClick={onPoke} label="Poke" />}
+      />
+    </header>
+  )
 }
+
+export default Header
