@@ -1,7 +1,7 @@
 {
   "name": "poke-spams",
   "version": "0.1.0",
-  "homepage": "http://IlhamWahabiGX.github.io/react-pokespams",
+  "homepage": "http://iwgx.github.io/pokespams",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
