@@ -6,8 +6,6 @@ import FontIcon from 'material-ui/FontIcon';
 import FileFolder from 'material-ui/svg-icons/file/folder';
 import FlipMove from 'react-flip-move';
 
-import './Result.css'
-
 const Result = ({ responseData }) => {
   return (
     <section id="result">

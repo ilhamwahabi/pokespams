@@ -5,7 +5,6 @@ import FontIcon from 'material-ui/FontIcon';
 import Pattern from "../Pattern/Pattern"
 import Filter from "../Filter/Filter"
 
-import "./Methode.css";
 export default class Methode extends React.Component {
   state = {
     filteredText: [

@@ -5,8 +5,6 @@ import IconButton from 'material-ui/IconButton';
 import Search from 'material-ui/svg-icons/action/search';
 import axios from 'axios';
 
-import "./Header.css"
-
 const Header = ({ getResponse }) => {
    const onPoke = () => {
     const patterns = 

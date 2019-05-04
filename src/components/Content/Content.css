@@ -1,4 +1,5 @@
 #content {
+  flex-grow: 1;
   display: flex;
   flex-direction: row;
   padding: 2rem;
@@ -29,7 +30,7 @@
     height: max-content;
     flex-grow: 0;
   }
-  
+
   #d1 {
     order: 2;
     flex-grow: 0;
