@@ -6,7 +6,7 @@ import { blue500 } from 'material-ui/styles/colors';
 import FontIcon from 'material-ui/FontIcon';
 import FlipMove from 'react-flip-move';
 
-import './Filter.css'
+import './index.css'
 
 const Filter = ({ text, onDelete }) => {
   const handleDelete = (id) => onDelete(id)

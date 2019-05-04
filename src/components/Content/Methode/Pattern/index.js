@@ -2,7 +2,7 @@ import React from "react";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 
-import "./Pattern.css";
+import "./index.css";
 
 export default class Pattern extends React.Component {
   state = { inputValue: "" };

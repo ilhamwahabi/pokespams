@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Methode from '../Methode/Methode'
-import Result from '../Result/Result'
+import Methode from './Methode'
+import Result from './Result'
 
-import './Content.css'
+import './index.css'
 
 const Content = ({ responseData }) => {
   return (

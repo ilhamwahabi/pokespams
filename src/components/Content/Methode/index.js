@@ -2,8 +2,8 @@ import React from 'react'
 import {Tabs, Tab} from 'material-ui/Tabs';
 import FontIcon from 'material-ui/FontIcon';
 
-import Pattern from "../Pattern/Pattern"
-import Filter from "../Filter/Filter"
+import Pattern from "./Pattern"
+import Filter from "./Filter"
 
 export default class Methode extends React.Component {
   state = {
