@@ -8,7 +8,7 @@ import FlipMove from 'react-flip-move';
 
 import './index.css'
 
-const Filter = ({ text, onDelete }) => {
+const PatternList = ({ text, onDelete }) => {
   const handleDelete = (id) => onDelete(id)
 
   return (
@@ -39,4 +39,4 @@ const Filter = ({ text, onDelete }) => {
   )
 }
 
-export default Filter
+export default PatternList

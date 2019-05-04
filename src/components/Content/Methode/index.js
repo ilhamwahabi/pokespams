@@ -2,8 +2,8 @@ import React from 'react'
 import {Tabs, Tab} from 'material-ui/Tabs';
 import FontIcon from 'material-ui/FontIcon';
 
-import Pattern from "./Pattern"
-import Filter from "./Filter"
+import PatternInput from "./PatternInput"
+import PatternList from "./PatternList"
 
 export default class Methode extends React.Component {
   state = {
@@ -65,24 +65,24 @@ export default class Methode extends React.Component {
             icon={<FontIcon className="material-icons">view_day</FontIcon>}
             label="KMP"
           >
-            <Pattern onAdd={this.addItem} />
-            <Filter onDelete={this.deleteItem} text={this.state.filteredText} />
+            <PatternInput onAdd={this.addItem} />
+            <PatternList onDelete={this.deleteItem} text={this.state.filteredText} />
           </Tab>
           <Tab
             value={1}
             icon={<FontIcon className="material-icons">local_drink</FontIcon>}
             label="BM"
           >
-            <Pattern onAdd={this.addItem} />
-            <Filter onDelete={this.deleteItem} text={this.state.filteredText} />
+            <PatternInput onAdd={this.addItem} />
+            <PatternList onDelete={this.deleteItem} text={this.state.filteredText} />
           </Tab>
           <Tab
             value={2}
             icon={<FontIcon className="material-icons">code</FontIcon>}
             label="REGEX"
           >
-            <Pattern onAdd={this.addItem} />
-            <Filter onDelete={this.deleteItem} text={this.state.filteredText} />
+            <PatternInput onAdd={this.addItem} />
+            <PatternList onDelete={this.deleteItem} text={this.state.filteredText} />
           </Tab>
         </Tabs>
       </section>

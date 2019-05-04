@@ -4,7 +4,7 @@ import RaisedButton from "material-ui/RaisedButton";
 
 import "./index.css";
 
-export default class Pattern extends React.Component {
+export default class PatternInput extends React.Component {
   state = { inputValue: "" };
 
   handleChange = (event, value) => {
