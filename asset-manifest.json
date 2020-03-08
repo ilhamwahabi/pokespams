@@ -1,6 +1,22 @@
 {
-  "main.css": "static/css/main.c176813b.css",
-  "main.css.map": "static/css/main.c176813b.css.map",
-  "main.js": "static/js/main.8d11e106.js",
-  "main.js.map": "static/js/main.8d11e106.js.map"
+  "files": {
+    "main.css": "/pokespams/static/css/main.4808c706.chunk.css",
+    "main.js": "/pokespams/static/js/main.01ae83df.chunk.js",
+    "main.js.map": "/pokespams/static/js/main.01ae83df.chunk.js.map",
+    "runtime-main.js": "/pokespams/static/js/runtime-main.fe96e887.js",
+    "runtime-main.js.map": "/pokespams/static/js/runtime-main.fe96e887.js.map",
+    "static/js/2.9621d183.chunk.js": "/pokespams/static/js/2.9621d183.chunk.js",
+    "static/js/2.9621d183.chunk.js.map": "/pokespams/static/js/2.9621d183.chunk.js.map",
+    "index.html": "/pokespams/index.html",
+    "precache-manifest.2a74a1f80f6ed6b39ed48c390ec7a4a0.js": "/pokespams/precache-manifest.2a74a1f80f6ed6b39ed48c390ec7a4a0.js",
+    "service-worker.js": "/pokespams/service-worker.js",
+    "static/css/main.4808c706.chunk.css.map": "/pokespams/static/css/main.4808c706.chunk.css.map",
+    "static/js/2.9621d183.chunk.js.LICENSE.txt": "/pokespams/static/js/2.9621d183.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fe96e887.js",
+    "static/js/2.9621d183.chunk.js",
+    "static/css/main.4808c706.chunk.css",
+    "static/js/main.01ae83df.chunk.js"
+  ]
 }
